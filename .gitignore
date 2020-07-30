@@ -1,3 +1,11 @@
+bin/
+build/
+.project/
+.classpath
+.vscode/
+.gradle/
+.project/
+
 # Compiled class file
 *.class
 
