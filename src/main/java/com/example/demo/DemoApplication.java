@@ -21,11 +21,15 @@ public class DemoApplication {
 	}
 
 	@Scheduled(fixedRate = 120000) // Every 2 mins
-	public void getWeatherContents() throws Exception {
+	public void printWeatherContents() throws Exception {
+		String contents = getWeatherContents();
+		System.out.println(contents);
+	}
+
+	public String getWeatherContents() throws Exception {
 		AbstractFileResolvingResource resource = new ClassPathResource(FILENAME);
 		File file = resource.getFile();
-		String contents = new String(Files.readAllBytes(file.toPath()));
-		System.out.println(contents);
+		return new String(Files.readAllBytes(file.toPath()));
 	}
 
 }
